@@ -5,4 +5,7 @@
 
 
 ## LAB 1
-* [Calculator Program](/workspaces/JAVA_MonoRepo/LAB_1/Calculator.java)
+* [Calculator Program](LAB_1/Calculator.java)
+
+## LAB 2
+* [Vahicle Class Program](LAB_2/Main.java)
