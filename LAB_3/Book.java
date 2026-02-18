@@ -12,7 +12,12 @@ public class Book {
     public LocalDate dateOfPublishing;
 
     // Parameterized Constructor
-    public Book(String name, String authorName, double price, String publisherName, String genre, String ISBN, LocalDate dateOfPublishing) {
+    public Book(String name, String authorName, double price, String publisherName, String genre, String ISBN, LocalDate dateOfPublishing) 
+    throws InvalidPriceException {
+        if (price < 0) {
+            throw new InvalidPriceException("Price cannot be Negative");
+        }
+
         this.name = name;
         this.authorName = authorName;
         this.price = price;
@@ -46,7 +51,13 @@ public class Book {
 
     public static void main(String[] args) {
         // Creating a book object using the parameterized constructor
-        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", 10.99, "Scribner", "Fiction", "978-0743273565", LocalDate.of(1925, 4, 10));
+        Book book1 = new Book("The Great Gatsby", 
+                                "F. Scott Fitzgerald", 
+                                10.99, 
+                                "Scribner", 
+                                "Fiction", 
+                                "978-0743273565", 
+                                LocalDate.of(1925, 4, 10));
         book1.displayDetails();
 
         System.out.println();
