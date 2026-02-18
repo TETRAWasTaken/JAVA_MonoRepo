@@ -57,7 +57,8 @@ public class Book {
                                 "Scribner", 
                                 "Fiction", 
                                 "978-0743273565", 
-                                LocalDate.of(1925, 4, 10));
+                                LocalDate.of(1925, 4, 10)
+                            );
         book1.displayDetails();
 
         System.out.println();
