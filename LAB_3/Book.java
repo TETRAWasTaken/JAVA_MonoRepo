@@ -13,9 +13,12 @@ public class Book {
 
     // Parameterized Constructor
     public Book(String name, String authorName, double price, String publisherName, String genre, String ISBN, LocalDate dateOfPublishing) 
-    throws InvalidPriceException {
+    throws InvalidPriceException, InvalidGenreException {
         if (price < 0) {
             throw new InvalidPriceException("Price cannot be Negative");
+        }
+        if (genre == null || genre.trim().isEmpty()) {
+            throw new InvalidGenreException("Genre cannot be empty");
         }
 
         this.name = name;
