@@ -53,21 +53,25 @@ public class Book {
     }
 
     public static void main(String[] args) {
-        // Creating a book object using the parameterized constructor
-        Book book1 = new Book("The Great Gatsby", 
-                                "F. Scott Fitzgerald", 
-                                10.99, 
-                                "Scribner", 
-                                "Fiction", 
-                                "978-0743273565", 
-                                LocalDate.of(1925, 4, 10)
-                            );
-        book1.displayDetails();
+        try {
+            // Creating a book object using the parameterized constructor
+            Book book1 = new Book("The Great Gatsby", 
+                                    "F. Scott Fitzgerald", 
+                                    10.99, 
+                                    "Scribner", 
+                                    "Fiction", 
+                                    "978-0743273565", 
+                                    LocalDate.of(1925, 4, 10)
+                                );
+            book1.displayDetails();
 
-        System.out.println();
+            System.out.println();
 
-        // Creating a book object using the default constructor
-        Book book2 = new Book();
-        book2.displayDetails();
+            // Creating a book object using the default constructor
+            Book book2 = new Book();
+            book2.displayDetails();
+        } catch (InvalidPriceException | InvalidGenreException e) {
+            System.err.println("Error creating book: " + e.getMessage());
+        }
     }
 }
