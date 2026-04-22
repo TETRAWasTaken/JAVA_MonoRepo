@@ -8,15 +8,15 @@ import java.nio.file.Path;
 
 public class DBConn {
     private static final String URL = buildDatabaseUrl();
+
     private Connection conn = null;
 
     private static String buildDatabaseUrl() {
-        Path repoRootStylePath = Path.of("LAB_9", "mydatabase.db");
-        Path localLabPath = Path.of("mydatabase.db");
+        Path repoRootStylePath = Path.of("LAB_9", "lab9.db");
+        Path localLabPath = Path.of("lab9.db");
 
-        // Support running from repo root and from inside LAB_9.
         Path selectedPath = Files.isDirectory(Path.of("LAB_9")) ? repoRootStylePath : localLabPath;
-        return "jdbc:sqlite:" + selectedPath.toString();
+        return "jdbc:sqlite:" + selectedPath;
     }
 
     public DBConn() {
